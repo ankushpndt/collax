@@ -1,35 +1,35 @@
 import React, { useEffect } from 'react';
-import { Footer, Header, Wrapper } from '../../../layout';
+import { FooterFive, HeaderSix, Wrapper } from '../../../layout';
 import { animationCreate } from '../../../utils/utils';
+import TestimonialArea from '../home-4/testimonial-area';
+import AboutArea from './about-area';
 import BlogArea from './blog-area';
 import BrandArea from './brand-area';
-import CreativeArea from './creative-area';
 import HeroArea from './hero-area';
-import NewsLetter from './news-letter';
-import ProjectArea from './project-area';
+import Industries from './industries';
+import Projects from './projects';
 import ServicesArea from './services-area';
-import Testimonial from './testimonial';
 
-const Home = () => {
+const HomeSix = () => {
   useEffect(() => {
     setTimeout(() => {
       animationCreate();
     }, 500);
-  }, [])
+  }, []);
   return (
     <Wrapper>
-      <Header />
-      <HeroArea />
-      <CreativeArea/>
+      <HeaderSix/>
+      <HeroArea/>
       <BrandArea/>
       <ServicesArea/>
-      <ProjectArea/>
-      <Testimonial/>
+      <Industries/>
+      <AboutArea/>
+      <Projects/>
+      <TestimonialArea home_6={true}/>
       <BlogArea/>
-      <NewsLetter/>
-      <Footer/>
+      <FooterFive/>
     </Wrapper>
   );
 };
 
-export default Home;
+export default HomeSix;

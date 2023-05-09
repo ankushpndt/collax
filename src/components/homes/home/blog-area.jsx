@@ -1,61 +1,60 @@
-import Link from "next/link";
-import { blog_data } from "../../../data";
+import Link from 'next/link';
+import React from 'react';
+import { blog_data } from '../../../data';
 
-const blogItems = blog_data.filter(b => b.home);
+const blog_contents = {
+  shapes: ['blog/hero-shape-5.1.png', 'testimonial/testimonial-shape-5.3.png'],
+  subtitle: 'Blog Post',
+  title: 'Collax news & blog',
+  blog_items: blog_data.filter(b => b.home_6),
+}
+const { subtitle, title, shapes, blog_items } = blog_contents;
 
 const BlogArea = () => {
   return (
-    <div className="tp-blog-area pt-130 pb-120 p-relative">
-      <div className="circle-animation blog-animation">
-        <span className="tp-circle-3"></span>
-      </div>
+    <div className="tp-blog-area yellow-bg bg-radius-none pt-125 pb-100 p-relative">
+      {shapes.map((s, i) => (
+        <div key={i} className={`bs-blog-shape-${i + 1} d-none d-lg-block`}>
+          <img src={`/assets/img/${s}`} alt="" />
+        </div>
+      ))}
       <div className="container">
-        <div className="row">
-          <div className="col-xl-12">
-            <div className="tp-blog-section-box text-center pb-15">
-              <h5 className="tp-subtitle">Blog & Article</h5>
-              <h2 className="tp-title">Recent blog post</h2>
+        <div className="row gx-0 justify-content-center">
+          <div className="col-xl-8">
+            <div className="tp-project-section-box text-center">
+              <h5 className="tp-subtitle tp-subtitle-before-color">{subtitle}</h5>
+              <h2 className="tp-title-sm pb-65">{title}</h2>
             </div>
           </div>
         </div>
-        <div className="row gx-40">
-          {blogItems.map((item, i) => {
-            const { date, delay, duration, id, img, meta_tag, short_desc, title } = item;
-            return <div key={id} className="col-xl-6 col-lg-6">
-              <div className="tp-blog-box mb-30 wow tpfadeLeft"
+        <div className="row">
+          {blog_items.map((item) => {
+            const { id, img, meta_tag, short_desc, duration, delay, title } = item;
+            return (
+              <div key={id} className="col-xl-4 col-lg-4 col-md-6 wow tpfadeUp"
                 data-wow-duration={duration} data-wow-delay={delay}>
-                <div className="tp-blog-item">
-                  <div className="tp-blog-img fix mb-35">
-                    <Link href={`/blog-details/${id}`}>
-                      <a> <img className="w-100" src={img} alt="" /></a>
-                    </Link>
-                  </div>
-                  <div className="tp-blog-meta d-flex justify-content-between mb-30">
-                    <a href="#">{meta_tag}</a>
-                    <a className="tp-blog-meta-color" href="#">{date}</a>
-                  </div>
-                  <div className="tp-blog-info">
-                    <h3 className="tp-blog-title">
+                <div className="bpblog">
+                  <div className="bpblog__item mb-30">
+                    <div className="bpblog__img w-img fix">
                       <Link href={`/blog-details/${id}`}>
-                        <a>{title}</a>
+                        <a><img src={img} alt="" /></a>
                       </Link>
-                    </h3>
-                    <p>{short_desc}</p>
+                    </div>
+                    <div className="bpblog__content">
+                      <span><a href="#">{meta_tag}</a></span>
+                      <h4 className="bp-blog-title">
+                        <Link href={`/blog-details/${id}`}>
+                          <a>{title}</a>
+                        </Link>
+                      </h4>
+                      <p className="m-0">{short_desc}...</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )
           })}
 
-        </div>
-        <div className="row">
-          <div className="col-xl-12">
-            <div className="tp-blog-button text-center mt-30">
-              <Link href={'/blog'}>
-                <a className="tp-btn">View All Blog</a>
-              </Link>
-            </div>
-          </div>
         </div>
       </div>
     </div>

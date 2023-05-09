@@ -1,71 +1,75 @@
 import Link from 'next/link';
 import React from 'react';
+import useModal from '../../../hooks/use-modal';
+import { HeroSocials } from '../../../layout/social-links';
+import { HighlightSix } from '../../../svg';
+import VideoModal from '../../common/modals/modal-video';
 
 const hero_contents = {
-  title: 'We make things look good',
-  text: <>At Collax we specialize in designing, building, shipping and scaling beautiful, <br />
-    usable products with blazing-fast efficiency</>,
-  btn_text: 'Visit Case Studies',
-  btn_text_2: 'About Collax',
-  social_links: [
-    { id: 1, icon: 'fab fa-facebook-f social-icon-1', title: 'Facebook',link: 'http://facebook.com' },
-    { id: 3, icon: 'fab fa-youtube social-icon-3', title: 'Youtube',link: 'https://www.youtube.com/' },
-    { id: 2, icon: 'fab fa-twitter social-icon-2', title: 'Twitter',link: 'http://twitter.com' },
-    { id: 4, icon: 'fab fa-behance social-icon-4', title: 'Behance',link: 'https://www.behance.net/' },
-  ],
-  hero_img: '/assets/img/hero/hero-2.png',
+  title: <>Providing unparalleled <span className="tp-highlight"> <HighlightSix /> <i>IT business solution</i>
+  </span> to maximum satisfaction</>,
+  sm_text: <>At collax we specialize in designing, building, shipping and scaling <br/> beautiful, usable products with blazing-fast efficiency</>,
+  video_id: 'AFHnVR1vb84',
+  video_title: 'Behind the scenes',
+  hero_img: '/assets/img/hero/hero-6.1.png',
 }
 
-const { title, text, btn_text, btn_text_2, social_links, hero_img } = hero_contents;
+const { hero_img, sm_text, title, video_id, video_title } = hero_contents;
 
 const HeroArea = () => {
+  const { isVideoOpen, setIsVideoOpen } = useModal();
   return (
-    <div className="tp-hero-area tp-hero-space p-relative z-index-1 fix">
-      <div className="tp-hero-shape">
-        <div className="shape-circle-yellow d-none"></div>
-        <div className="shape-circle-blue"></div>
-        <div className="shape-one"><img src="/assets/img/hero/shape-1.png" alt="" /></div>
-      </div>
-      <div className="tp-hero-wapper">
+    <React.Fragment>
+      <div className="tp-hero-area tp-hero-border tp-bp-hero-space p-relative grey-bg fix">
+        <div className="tp-hero-social bs-hero-social d-none d-xxl-block">
+          <HeroSocials />
+        </div>
+        <div className="tp-bp-hero-shape d-none d-lg-block wow tpfadeRight"
+          data-wow-duration=".3s" data-wow-delay=".6s">
+          <img src="assets/img/hero/hero-shape-6.1.png" alt="" />
+        </div>
         <div className="container">
-          <div className="row align-items-center">
-            <div className="col-xl-7 col-lg-7">
-              <div className="tp-hero-content">
-                <div className="tp-hero-text">
-                  <h2 className="tp-hero-title wow tpfadeUp" data-wow-duration=".3s" data-wow-delay=".6s">
-                    {title}
-                  </h2>
-                  <p className="wow tpfadeUp" data-wow-duration=".5s" data-wow-delay=".8s">{text}</p>
-                  <div className="tp-hero-button mb-140 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay="1s">
-                    <Link href="/portfolio">
-                      <a className="tp-btn mr-30">{btn_text}</a>
-                    </Link>
-                    <Link href="/about-me">
-                      <a className="tp-btn-grey">{btn_text_2}
-                        <i className="far fa-arrow-right"></i></a>
+          <div className="row">
+            <div className="col-xl-6 col-lg-7 col-md-12">
+              <div className="tp-hero-section-box tp-bp-hero-section-box">
+                <h3 className="tp-hero-title tp-bs-hero-title wow tpfadeUp" data-wow-duration=".5s" data-wow-delay=".8s">{title}</h3>
+                <p className="wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".9s">{sm_text}</p>
+                <div className="tp-hero-three-button-box d-flex align-items-center wow tpfadeUp" data-wow-duration=".9s" data-wow-delay="1.1s">
+                  <div className="xs-bottom-space">
+                    <Link href="/contact">
+                      <a className="tp-btn-sky mr-55">Contact us</a>
                     </Link>
                   </div>
-                  <div className="tp-hero-social pb-30 wow tpfadeIn" data-wow-duration=".7s" data-wow-delay="1.2s">
-                    <div className="tp-hero-social bp-hero-social">
-                      {social_links.map((l, i) => (
-                        <a key={i} className={`social-icon-${l.id}`} href={l.link} target="_blank" rel="noreferrer">
-                          <i className={l.icon}></i><span>{l.title}</span>
-                        </a>
-                      ))}
-                    </div>
+                  <div onClick={() => setIsVideoOpen(true)}
+                    className="tp-hero-paly-button tp-bp-hero-paly-button  z-index-1">
+                    <button className="popup-video"><i className="far fa-play"></i></button>
+                    <span>{video_title}</span>
+                  </div>
+                </div>
+                <div className="tp-hero-social  pb-30 d-xxl-none d-xl-block">
+                  <div className="tp-hero-social bp-hero-social bs-xl-hero-social">
+                    <HeroSocials hide_title={true} />
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-xl-5 col-lg-5">
-              <div className="tp-hero-big-img wow fadeInRight" data-wow-duration=".7s" data-wow-delay="1.2s">
-                <img src={hero_img} alt="" />
+            <div className="col-xl-6 col-lg-5">
+              <div className="tp-hero-right">
+                <div className="tp-bp-hero__img  p-relative wow tpfadeRight"
+                  data-wow-duration=".9s" data-wow-delay="1s">
+                  <img className="z-index-1" src={hero_img} alt="hero img" />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+
+      {/* video modal start */}
+      <VideoModal isVideoOpen={isVideoOpen} setIsVideoOpen={setIsVideoOpen} videoId={video_id} />
+      {/* video modal end */}
+
+    </React.Fragment>
   );
 };
 

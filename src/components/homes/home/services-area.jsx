@@ -1,45 +1,57 @@
 import Link from 'next/link';
 import React from 'react';
 import { services_data } from '../../../data';
-import SingleServiceTwo from '../../common/single-service-2';
 
 const services_contents = {
-  shape_img: '/assets/img/service/service-shape.png',
-  subtitle: 'What We Do?',
-  title: 'Experts in every aspect lifecycle',
-  btn_text: 'View All Services',
+  shapes: ['bp-chose-6.1.png', 'hero-shape-5.1.png'],
+  subtitle: 'Why Choose us',
+  title: 'Excellent it solution service and unlimited support for you business',
+  services: services_data.filter(ser => ser.home_6),
 }
 
-const { shape_img, title, subtitle, btn_text } = services_contents;
-const services_items = services_data.filter(ser => ser.home);
+const { title, shapes, services, subtitle } = services_contents;
 
 const ServicesArea = () => {
   return (
-    <div className="tp-service-area pt-190 pb-100 grey-bg p-relative fix">
-      <div className="tp-sv-shape-img z-index-1">
-        <img src={shape_img} alt="" />
-      </div>
-      <div className="circle-animation service">
-        <span className="tp-circle-1"></span>
-        <span className="tp-circle-2"></span>
-      </div>
-      <div className="circle-animation service-two">
-        <span className="tp-circle-skye"></span>
-      </div>
+    <div className="tp-service-area pb-90 p-relative">
+      {shapes.map((s, i) => (
+        <div key={i} className={`bs-shape-${i + 1} d-none d-lg-block`}>
+          <img src={`/assets/img/chose/${s}`} alt="" />
+        </div>
+      ))}
       <div className="container">
-        <div className="row">
-          <div className="col-lg-6 col-md-12 col-12">
-            <div className="tp-service-section-box mb-30 wow tpfadeUp" data-wow-duration=".3s" data-wow-delay=".6s">
-              <h5 className="tp-subtitle pb-10">{subtitle}</h5>
-              <h2 className="tp-title">{title}</h2>
-              <Link href="/service-1">
-                <a className="tp-btn">{btn_text}</a>
-              </Link>
+        <div className="row justify-content-center">
+          <div className="col-xl-10">
+            <div className="tp-project-section-box text-center">
+              <h5 className="tp-subtitle">{subtitle}</h5>
+              <h2 className="tp-title-sm pb-60">{title}</h2>
             </div>
           </div>
-          {services_items.map((s, i) => (
-            <SingleServiceTwo key={i} service={s} />
-          ))}
+        </div>
+        <div className="row">
+          {services.map((item, i) => {
+            const { id, text_1, title, delay, duration, icon, active } = item;
+            return <div key={id} className="col-xl-4 col-lg-4 col-md-6 mb-30 wow tpfadeUp"
+              data-wow-duration={duration} data-wow-delay={delay}>
+              <div className={`bpservice ${active ? 'active' : ''} text-center`}>
+                <div className={`bpservice__item bp-sv-color-${i + 1}`}>
+                  <div className='bpservice__icon'>
+                    <Link href={`/service-details/${id}`}>
+                      <a> {icon} </a>
+                    </Link>
+                  </div>
+                  <div className="bpservice__content">
+                    <h3 className="bp-sv-sm-title bp-sv-color-1">
+                      <Link href={`/service-details/${id}`}>
+                        <a>{title}</a>
+                      </Link>
+                    </h3>
+                    <p>{text_1.substring(0, 60)}...</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          })}
         </div>
       </div>
     </div>
