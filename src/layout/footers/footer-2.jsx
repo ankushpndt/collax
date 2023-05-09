@@ -66,24 +66,6 @@ const FooterTwo = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                <div className="tp-cpoyright-menu text-md-start text-center text-lg-center mb-30">
-                  {copy_right_menu.map((m, i) => (
-                    <a key={i} href="#">
-                      {m}
-                    </a>
-                  ))}
-                </div>
-              </div>
-              <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                <div className="tp-copyright-social tp-copyright-social-two text-center text-lg-end mb-30">
-                  {social_links.map((s, i) => (
-                    <a key={i} href={s.link} target="_blank" rel="noreferrer">
-                      <i className={s.icon}></i>
-                    </a>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </div>
