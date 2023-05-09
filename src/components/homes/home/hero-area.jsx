@@ -34,9 +34,6 @@ const HeroArea = () => {
   return (
     <React.Fragment>
       <div className="tp-hero-area tp-hero-border tp-bp-hero-space p-relative grey-bg fix">
-        <div className="tp-hero-social bs-hero-social d-none d-xxl-block">
-          <HeroSocials />
-        </div>
         <div
           className="tp-bp-hero-shape d-none d-lg-block wow tpfadeRight"
           data-wow-duration=".3s"
@@ -80,11 +77,6 @@ const HeroArea = () => {
                       <i className="far fa-play"></i>
                     </button>
                     <span>{video_title}</span>
-                  </div>
-                </div>
-                <div className="tp-hero-social  pb-30 d-xxl-none d-xl-block">
-                  <div className="tp-hero-social bp-hero-social bs-xl-hero-social">
-                    <HeroSocials hide_title={true} />
                   </div>
                 </div>
               </div>
