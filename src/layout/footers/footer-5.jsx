@@ -58,17 +58,6 @@ const FooterFive = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-xl-4 col-lg-4 col-md-6">
-                <div className="tp-cpoyright-menu  bp-cpoyright-menu text-md-start text-center text-lg-center  mb-30">
-                  <a href="#">Case Studies</a>
-                  <a href="#">Pricing Plan</a>
-                </div>
-              </div>
-              <div className="col-xl-4 col-lg-4 col-md-6">
-                <div className="tp-copyright-social bp-copyright-social tp-copyright-social-two text-center text-lg-end mb-30">
-                  <SocialLinks />
-                </div>
-              </div>
             </div>
           </div>
         </div>

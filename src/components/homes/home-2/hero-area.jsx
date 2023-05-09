@@ -14,7 +14,7 @@ const hero_contents = {
   brands: [
     { img: "hero-icon-1", title: "Dribbble", link: "https://dribbble.com/" },
     { img: "hero-icon-2", title: "Behance", link: "https://www.behance.net/" },
-    { img: "hero-icon-3", title: "Massage", link: "http://facebook.com" },
+    { img: "hero-icon-3", title: "Message", link: "http://facebook.com" },
   ],
 };
 

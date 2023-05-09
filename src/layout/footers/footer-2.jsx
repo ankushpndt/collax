@@ -12,19 +12,6 @@ const footer_contents = {
   copy_right_text: (
     <>© {new Date().getFullYear()} Personal Portfolio , All Right Received.</>
   ),
-  copy_right_menu: ["Case Studies", "Pricing Plan"],
-  social_links: [
-    "fab fa-linkedin-in",
-    "fab fa-facebook-f",
-    "fab fa-instagram",
-    "fab fa-youtube",
-  ],
-  social_links: [
-    { icon: "fab fa-linkedin-in", link: "https://www.linkedin.com/" },
-    { icon: "fab fa-facebook-f", link: "http://facebook.com" },
-    { icon: "fab fa-instagram", link: "https://www.instagram.com/" },
-    { icon: "fab fa-youtube", link: "https://www.youtube.com/" },
-  ],
 };
 const {
   shapes,

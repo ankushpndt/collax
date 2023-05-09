@@ -45,7 +45,7 @@ const HeaderSix = () => {
                 </div>
               </div>
               <div className="col-xxl-5 col-xl-6 col-lg-6">
-                <div className="tp-main-menu tp-menu-black tp-bs-menu tp-bp-menu">
+                <div className="tp-main-menu tp-menu-black tp-bs-menu tp-bp-menu text-center">
                   <nav id="mobile-menu">
                     {/* nav menus start */}
                     <NavMenus />
