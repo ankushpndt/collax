@@ -4,7 +4,7 @@ const firebaseConfig = {
   projectId: "collax-cf6be",
   storageBucket: "collax-cf6be.appspot.com",
   messagingSenderId: "266530521253",
-  appId: "1:266530521253:web:95c0f3fe64f27eedb20d4c"
+  appId: "1:266530521253:web:95c0f3fe64f27eedb20d4c",
 };
 
 export default firebaseConfig;

@@ -45,21 +45,12 @@ const HeaderSix = () => {
                 </div>
               </div>
               <div className="col-xxl-5 col-xl-6 col-lg-6">
-                <div className="tp-main-menu tp-menu-black tp-bs-menu tp-bp-menu text-center">
+                <div className="tp-main-menu tp-menu-black tp-bs-menu tp-bp-menu">
                   <nav id="mobile-menu">
                     {/* nav menus start */}
                     <NavMenus />
                     {/* nav menus end */}
                   </nav>
-                </div>
-              </div>
-              <div className="col-xxl-4 col-xl-3 col-lg-3">
-                <div className="tp-header-left d-flex align-items-center justify-content-end ">
-                  <div className="tp-header-yellow-button">
-                    <Link href="/about">
-                      <a className="tp-btn-white">How it Works</a>
-                    </Link>
-                  </div>
                 </div>
               </div>
             </div>
