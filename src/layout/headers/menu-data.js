@@ -4,7 +4,7 @@ const menu_data = [
     mega_menu: false,
     has_dropdown: false,
     title: "About us",
-    link: "/aboutus",
+    link: "/about",
   },
   {
     id: 2,
