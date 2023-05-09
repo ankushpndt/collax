@@ -60,7 +60,10 @@ const FooterTwo = () => {
                   <div className="tp-copyright-logo">
                     <Link href="/">
                       <a>
-                        <img src="/assets/img/logo/logo-blue.png" alt="" />
+                        <img
+                          src="/assets/img/logo/jj-tech-footer-logo.png"
+                          alt=""
+                        />
                       </a>
                     </Link>
                   </div>

@@ -21,7 +21,7 @@ const HeaderFive = () => {
                 <div className="tp-logo text-start">
                   <Link href={"/"}>
                     <a>
-                      <img src="/assets/img/logo/logo-blue.png" alt="" />
+                      <img src="/assets/img/logo/jj-tech-logo.png" alt="" />
                     </a>
                   </Link>
                 </div>

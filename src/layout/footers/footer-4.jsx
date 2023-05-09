@@ -5,7 +5,7 @@ import CopyrightArea from "./component/copyright-area";
 
 const footer_contents = {
   shapes: ["hero-shape-5.1.png", "testimonial-shape-5.4.png"],
-  logo: "/assets/img/logo/logo-blue.png",
+  logo: "/assets/img/logo/jj-tech-footer-logo.png",
   widget_desc:
     "A new way to make the payments easy, reliable and 100% secure. claritatem itamconse quat. Exerci tationulla",
   footer_widgets: [

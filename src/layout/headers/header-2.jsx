@@ -1,23 +1,26 @@
-import Link from 'next/link';
-import React from 'react';
-import useSticky from '../../hooks/use-sticky';
-import MobileMenu from './mobile-menu';
-import NavMenus from './nav-menus';
+import Link from "next/link";
+import React from "react";
+import useSticky from "../../hooks/use-sticky";
+import MobileMenu from "./mobile-menu";
+import NavMenus from "./nav-menus";
 
 const HeaderTwo = () => {
   const { headerSticky } = useSticky();
   return (
     <React.Fragment>
       <header className="d-none d-lg-block">
-        <div id="header-sticky" className={`tp-header-area-two header-transparent header-space-three pl-115 pr-115
-         ${headerSticky ? 'header-sticky' : ''}`}>
+        <div
+          id="header-sticky"
+          className={`tp-header-area-two header-transparent header-space-three pl-115 pr-115
+         ${headerSticky ? "header-sticky" : ""}`}
+        >
           <div className="container-fluid">
             <div className="row align-items-center header-space-two">
               <div className="col-xxl-3 col-xl-3 col-lg-3">
                 <div className="tp-logo text-start">
                   <Link href="/">
                     <a>
-                      <img src="/assets/img/logo/logo-blue.png" alt="" />
+                      <img src="/assets/img/logo/jj-tech-logo.png" alt="" />
                     </a>
                   </Link>
                 </div>
